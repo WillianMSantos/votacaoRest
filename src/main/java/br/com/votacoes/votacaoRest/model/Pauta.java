@@ -4,10 +4,9 @@ package br.com.votacoes.votacaoRest.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.swing.text.StyleContext;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,6 +18,8 @@ public class Pauta {
     private String nome;
     private Integer qtdSim;
     private Integer qtdNao;
+    @OneToMany
+    private List<Associado>associados;
     private String resultado;
 
     public Pauta(){
